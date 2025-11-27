@@ -2,11 +2,10 @@ from flask import Flask, request, jsonify
 from ultralytics import YOLO
 import cv2
 import numpy as np
-import base64
 
 app = Flask(__name__)
 
-model = YOLO("best.pt")  # Make sure best.pt is in this folder
+model = YOLO("best.pt")  # Make sure best.pt is in the same folder
 
 @app.route('/detect', methods=['POST'])
 def detect():
